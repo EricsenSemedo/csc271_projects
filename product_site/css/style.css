@@ -16,7 +16,7 @@ a:hover {
 .nav-bar {
     display: flex;
     justify-content: space-around;
-    align-items: top;
+    align-items: flex-start;
     padding: 10px;
     max-height: 250px;
 }
@@ -54,7 +54,7 @@ p {
 .search-bar {
     display: flex;
     justify-content: center;
-    align-items: top;
+    align-items: flex-start;
     padding: 10px;
 }
 
