@@ -1,0 +1,33 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f56601;
+    text-decoration: underline;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    display: flex;
+    justify-content: left;
+    color: #f56601;
+}
+
+h4 {
+    text-decoration: underline;
+}
+
+p {
+    font-size: 1.1em;
+}
