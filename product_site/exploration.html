@@ -9,44 +9,73 @@
 
     <body>
 
-        <div class="nav-bar">
-            <img src="./images/game.png" alt="Arcade room">
+        <div class="header">
+            <img id="logo" src="./images/mogames_logo.png" alt="MoGames Logo">
+
+            <div class="search-bar">
+            <form>
+                <label for="toSearch">Search:</label>
+                <input type="text" id="toSearch" name="query">
+                <div class="filter-dropdown">
+                    <button type="button" class="filter-btn">Filter</button>
+                    <div class="filter-content">
+                        <label><input type="checkbox" name="filter" value="all"> All</label>
+                        <label><input type="checkbox" name="filter" value="personal"> Personal</label>
+                        <label><input type="checkbox" name="filter" value="topRated"> Top Rated</label>
+                        <label><input type="checkbox" name="filter" value="genre"> By Genre</label>
+                    </div>
+                </div>
+            </form>
+            </div>
 
             <div class="nav-links">
-                <a href="./index.html">Home</a>
-                <a href="./exploration.html">Exploration</a>
-                <a href="./profile.html">Profile</a>
+                <a href="./index.html" class="active">Home</a>
+                <a href="./exploration.html" class="active">Exploration</a>
+                <a href="./profile.html" class="active">Profile</a>
             </div>
         </div>
 
-        <form>
-            <label for="toSearch">Search:</label>
-            <input type="text" id="toSearch" name="query">
-            <br>
-            <label>Filter:</label>
-            <br>
-            <input type="checkbox" id="filterPersonalized" class="filter" name="Personalized">
-            <label for="filterPersonalized">Personalized</label>
-            <input type="checkbox" id="filterTopRated" class="filter" name="Top Rated">
-            <label for="filterTopRated">Top Rated</label>
-            <input type="checkbox" id="filterByGenre" class="filter" name="By Genre">
-            <label for="filterByGenre">By Genre</label>
-        </form>
+        <div class="main-content">
+            <img src="./images/game.png" alt="Arcade room">
 
-        <h1>Exploration</h1>
+            <h1>Exploration</h1>
 
-        <p>
-            This page is dedicated to exploring the different games that you can play. 
-        </p>
+            <p>
+                This page is dedicated to exploring the different games that you can play. 
+            </p>
 
-        <iframe 
-        width="560" 
-        height="315" 
-        src="https://www.youtube.com/embed/qS9lTq_YGBQ?si=GkCaQhQZb9vHD_ZL" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen></iframe> 
+            <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/qS9lTq_YGBQ?si=GkCaQhQZb9vHD_ZL" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe> 
+
+            <div class="grid-container">
+                <div class="game-card">
+                    <img src="./images/witcher3.jpg" alt="The Witcher 3">
+                    <h3>The Witcher 3</h3>
+                    <p>PC, PS4, Xbox One</p>
+                </div>
+                <div class="game-card">
+                    <img src="./images/witcher3.jpg" alt="The Witcher 3">
+                    <h3>The Witcher 3</h3>
+                    <p>PC, PS4, Xbox One</p>
+                </div>
+                <div class="game-card">
+                    <img src="./images/witcher3.jpg" alt="The Witcher 3">
+                    <h3>The Witcher 3</h3>
+                    <p>PC, PS4, Xbox One</p>
+                </div>
+                <div class="game-card">
+                    <img src="./images/witcher3.jpg" alt="The Witcher 3">
+                    <h3>The Witcher 3</h3>
+                    <p>PC, PS4, Xbox One</p>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

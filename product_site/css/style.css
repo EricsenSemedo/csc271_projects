@@ -10,25 +10,25 @@ a {
 
 a:hover {
     color: #f56601;
-    text-decoration: underline;
 }
 
-.nav-bar {
+.header {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
     padding: 10px;
     max-height: 250px;
-}
-
-.nav-bar > * {
-    flex: 1;
+    overflow: hidden;
 }
 
 .nav-links {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
+    gap: 20px;
     max-height: 5px;
+    margin-left: auto;
+}
+
+.nav-links a:active {
+    color: #f5670194;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -46,20 +46,178 @@ p {
 }
 
 #logo {
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 75px;
+    max-height: 50px;
     height: auto;
+    margin-right: auto;
 }
 
 .search-bar {
     display: flex;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 250px;
+}
+
+.carousel-button {
+    display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    max-width: 150px;
+    min-width: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 100%;
+    background-color: rgb(54, 54, 54);
+    border: none;
+}
+
+#next {
+    margin-left: auto;
+}
+
+.game-card {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    height: 100%;
+    margin-right: 30px;
+    width: 200px;
+    text-overflow: ellipsis;
+}
+
+.game-card img {
+    width: 100%;
+    height: 80%;
+    border-radius: 5px;
+}
+
+.game-card h3 {
+    margin: 0;
+    padding: 5px;
+}
+
+.game-card p {
+    margin: 0;
+    padding: 5px;
+}
+
+.game-list {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-left: 30px;
+    width: 100%;
+}
+
+.filter-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.filter-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #545454;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 25px;
+}
+
+.filter-content {
+    display: none;
+    position: absolute;
+    background-color: #545454;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.filter-content label {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.filter-content label:hover {
+    background-color: #25252560;
+    border-radius: 5px;
+}
+
+.filter-dropdown:hover .filter-content {
+    display: block;
+}
+
+.search-bar input[type="text"] {
+    background-color:rgb(54, 54, 54);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-auto-flow: row;
+    align-content: top;
+    margin-top: 50px;
+    gap: 20px;
     padding: 10px;
 }
 
-.horizontal-scroller {
+.grid-item {
+    background-color: rgb(54, 54, 54);
+    justify-content: center;
+    align-items: center;
+}
+
+.game-view {
     display: flex;
-    overflow-x: auto;
-    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-view img {
+    width: 100%;
+    height: 80%;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: auto auto;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-content {
+        width: 100%;
+        height: auto;
+    }
 }
