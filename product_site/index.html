@@ -11,20 +11,19 @@
         <div class="header">
             <img id="logo" src="./images/mogames_logo.png" alt="MoGames Logo">
 
-            <div class="search-bar">
-            <form>
-                <label for="toSearch">Search:</label>
-                <input type="text" id="toSearch" name="query">
-                <div class="filter-dropdown">
-                    <button type="button" class="filter-btn">Filter</button>
-                    <div class="filter-content">
-                        <label><input type="checkbox" name="filter" value="all"> All</label>
-                        <label><input type="checkbox" name="filter" value="personal"> Personal</label>
-                        <label><input type="checkbox" name="filter" value="topRated"> Top Rated</label>
-                        <label><input type="checkbox" name="filter" value="genre"> By Genre</label>
+        <div class="search-bar">
+                <form>
+                    <input type="text" id="toSearch" name="query" placeholder="Search">
+                    <div class="filter-dropdown">
+                        <button type="button" class="filter-btn">Filter</button>
+                        <div class="filter-content">
+                            <label><input type="checkbox" name="filter" value="all"> All</label>
+                            <label><input type="checkbox" name="filter" value="personal"> Personal</label>
+                            <label><input type="checkbox" name="filter" value="topRated"> Top Rated</label>
+                            <label><input type="checkbox" name="filter" value="genre"> By Genre</label>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
             </div>
 
             <div class="nav-links">
@@ -35,7 +34,7 @@
         </div>
 
         <div class="main-content">
-            <h1 id="main">MoGames</h1>
+            <h1>Welcome to MoGames</h1>
 
             <br>
             <br>
@@ -45,11 +44,13 @@
                 <button class="carousel-button prev">&lt;</button>
 
                 <div class="game-list">
-                    <div class="game-card">
-                        <img src="./images/witcher3.jpg" alt="The Witcher 3">
-                        <h3>The Witcher 3</h3>
-                        <p>PC, PS4, Xbox One</p>
-                    </div>
+                    <a href="./game_view.html" class="card-link">
+                        <div class="game-card">
+                            <img src="./images/game.png" alt="The Witcher 3">
+                            <h3>The Witcher 3</h3>
+                            <p>PC, PS4, Xbox One</p>
+                        </div>
+                    </a>
                 </div>
 
                 <button class="carousel-button next">&gt;</button>
@@ -60,63 +61,55 @@
                     <button class="carousel-button prev">&lt;</button>
 
                     <div class="game-list">
-                        <div class="game-card">
-                            <img src="./images/witcher3.jpg" alt="The Witcher 3">
-                            <a href="./game_view.html">
+                        <a href="./game_view.html" class="card-link">
+                            <div class="game-card">
+                                <img src="./images/game.png" alt="The Witcher 3">
                                 <h3>The Witcher 3</h3>
-                            </a>
-                            <p>PC, PS4, Xbox One</p>
-                        </div>
-                        <div class="game-card">
-                            <img src="./images/witcher3.jpg" alt="The Witcher 3">
-                            <h3>The Witcher 3</h3>
-                            <p>PC, PS4, Xbox One</p>
-                        </div>
-                        <div class="game-card">
-                            <img src="./images/witcher3.jpg" alt="The Witcher 3">
-                            <h3>The Witcher 3</h3>
-                            <p>PC, PS4, Xbox One</p>
-                        </div>
-                        <div class="game-card">
-                            <img src="./images/witcher3.jpg" alt="The Witcher 3">
-                            <h3>The Witcher 3</h3>
-                            <p>PC, PS4, Xbox One</p>
-                        </div>
-                        <div class="game-card">
-                            <img src="./images/witcher3.jpg" alt="The Witcher 3">
-                            <h3>The Witcher 3</h3>
-                            <p>PC, PS4, Xbox One</p>
-                        </div>
-                        <div class="game-card">
-                            <img src="./images/witcher3.jpg" alt="The Witcher 3">
-                            <h3>The Witcher 3</h3>
-                            <p>PC, PS4, Xbox One</p>
-                        </div>
-                        <div class="game-card">
-                            <img src="./images/witcher3.jpg" alt="The Witcher 3">
-                            <h3>The Witcher 3</h3>
-                            <p>PC, PS4, Xbox One</p>
-                        </div>
-                        <div class="game-card">
-                            <img src="./images/witcher3.jpg" alt="The Witcher 3">
-                            <h3>The Witcher 3</h3>
-                            <p>PC, PS4, Xbox One</p>
-                        </div>
-                        <div class="game-card">
-                            <img src="./images/witcher3.jpg" alt="The Witcher 3">
-                            <h3>The Witcher 3</h3>
-                            <p>PC, PS4, Xbox One</p>
-                        </div>
-                        <div class="game-card">
-                            <img src="./images/witcher3.jpg" alt="The Witcher 3">
-                            <h3>The Witcher 3</h3>
-                            <p>PC, PS4, Xbox One</p>
-                        </div>
-                        <div class="game-card">
-                            <img src="./images/witcher3.jpg" alt="The Witcher 3">
-                            <h3>The Witcher 3</h3>
-                            <p>PC, PS4, Xbox One</p>
-                        </div>
+                                <p>PC, PS4, Xbox One</p>
+                            </div>
+                        </a>
+                        <a href="./game_view.html" class="card-link">
+                            <div class="game-card">
+                                <img src="./images/game.png" alt="The Witcher 3">
+                                <h3>The Witcher 3</h3>
+                                <p>PC, PS4, Xbox One</p>
+                            </div>
+                        </a>
+                        <a href="./game_view.html" class="card-link">
+                            <div class="game-card">
+                                <img src="./images/game.png" alt="The Witcher 3">
+                                <h3>The Witcher 3</h3>
+                                <p>PC, PS4, Xbox One</p>
+                            </div>
+                        </a>
+                        <a href="./game_view.html" class="card-link">
+                            <div class="game-card">
+                                <img src="./images/game.png" alt="The Witcher 3">
+                                <h3>The Witcher 3</h3>
+                                <p>PC, PS4, Xbox One</p>
+                            </div>
+                        </a>
+                        <a href="./game_view.html" class="card-link">
+                            <div class="game-card">
+                                <img src="./images/game.png" alt="The Witcher 3">
+                                <h3>The Witcher 3</h3>
+                                <p>PC, PS4, Xbox One</p>
+                            </div>
+                        </a>
+                        <a href="./game_view.html" class="card-link">
+                            <div class="game-card">
+                                <img src="./images/game.png" alt="The Witcher 3">
+                                <h3>The Witcher 3</h3>
+                                <p>PC, PS4, Xbox One</p>
+                            </div>
+                        </a>
+                        <a href="./game_view.html" class="card-link">
+                            <div class="game-card">
+                                <img src="./images/game.png" alt="The Witcher 3">
+                                <h3>The Witcher 3</h3>
+                                <p>PC, PS4, Xbox One</p>
+                            </div>
+                        </a>
                     </div>
 
                     <button class="carousel-button next">&gt;</button>
@@ -127,11 +120,13 @@
                 <button class="carousel-button prev">&lt;</button>
 
                 <div class="game-list">
-                    <div class="game-card">
-                        <img src="./images/game.png" alt="The Witcher 3">
-                        <h3>The Witcher 3</h3>
-                        <p>PC, PS4, Xbox One</p>
-                    </div>
+                    <a href="./game_view.html" class="card-link">
+                        <div class="game-card">
+                            <img src="./images/game.png" alt="The Witcher 3">
+                            <h3>The Witcher 3</h3>
+                            <p>PC, PS4, Xbox One</p>
+                        </div>
+                    </a>
                 </div>
 
                 <button class="carousel-button next">&gt;</button>
