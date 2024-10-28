@@ -11,7 +11,7 @@
         <div class="header">
             <img id="logo" src="./images/mogames_logo.png" alt="MoGames Logo">
 
-        <div class="search-bar">
+            <div class="search-bar">
                 <form>
                     <input type="text" id="toSearch" name="query" placeholder="Search">
                     <div class="filter-dropdown">
@@ -26,11 +26,13 @@
                 </form>
             </div>
 
-            <div class="nav-links">
+            <div class="nav-container">
+                <div class="slider"></div> <!-- Sliding block for active page -->
                 <a href="./index.html" class="active">Home</a>
-                <a href="./exploration.html" class="active">Exploration</a>
-                <a href="./profile.html" class="active">Profile</a>
+                <a href="./exploration.html">Exploration</a>
+                <a href="./profile.html">Profile</a>
             </div>
+
         </div>
 
         <div class="main-content">
@@ -41,7 +43,7 @@
 
             <h2>Game Suggestions</h2>
             <div class="carousel">
-                <button class="carousel-button prev">&lt;</button>
+                <button class="carousel-button prev" onclick="cyclePrevious(0)">&lt;</button>
 
                 <div class="game-list">
                     <a href="./game_view.html" class="card-link">
@@ -53,12 +55,12 @@
                     </a>
                 </div>
 
-                <button class="carousel-button next">&gt;</button>
+                <button class="carousel-button next" onclick="cycleNext(0)">&gt;</button>
             </div>
 
             <h2>Popular Games</h2>
                 <div class="carousel">
-                    <button class="carousel-button prev">&lt;</button>
+                    <button class="carousel-button prev" onclick="cyclePrevious(1)">&lt;</button>
 
                     <div class="game-list">
                         <a href="./game_view.html" class="card-link">
@@ -112,12 +114,12 @@
                         </a>
                     </div>
 
-                    <button class="carousel-button next">&gt;</button>
+                    <button class="carousel-button next" onclick="cycleNext(1)">&gt;</button>
                 </div>
 
             <h2>New Releases</h2>
             <div class="carousel">
-                <button class="carousel-button prev">&lt;</button>
+                <button class="carousel-button prev" onclick="cyclePrevious(2)">&lt;</button>
 
                 <div class="game-list">
                     <a href="./game_view.html" class="card-link">
@@ -129,7 +131,7 @@
                     </a>
                 </div>
 
-                <button class="carousel-button next">&gt;</button>
+                <button class="carousel-button next" onclick="cyclePrevious(2)">&gt;</button>
             </div>
 
             <br>
@@ -175,5 +177,8 @@
             <a href="https://rawg.io/">Similar Website</a>
             <a href="mailto:ericsen_semedo@uri.edu">Email Me</a>
         </div>
+
+        <script src="./js/simple_script.js"></script>
+        <script src="./js/slider.js"></script>
     </body>
 </html>
