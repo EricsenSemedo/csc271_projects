@@ -28,6 +28,10 @@ function handleNavHover() {
     slider.style.width = `${linkRect.width}px`;
 }
 
+/* this function connects the hover event to the link
+   by adding an event listener to the link that listens for a mouseenter event
+   and calls the handleNavHover function when the mouse enters the link
+*/
 function connectHoverEvent(link) {
     link.addEventListener('mouseenter', handleNavHover);
 }
