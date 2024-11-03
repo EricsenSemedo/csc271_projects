@@ -26,6 +26,7 @@ function updateCarousel (carouselIndex){
     const offset = -currentIndex * cardWidth;
     gameList[carouselIndex].style.transform = `translateX(${offset}px)`;
 
+    // if the current index is at the beginning or end of the carousel, set the opacity of the previous or next button to .5 and the cursor to default
     if (currentIndex == 0) {
         prevButtons[carouselIndex].style.opacity = '.5';
         prevButtons[carouselIndex].style.cursor = 'default';
@@ -39,6 +40,7 @@ function updateCarousel (carouselIndex){
         nextButtons[carouselIndex].style.cursor = 'default';
     }
     else {
+        // if the current index is not at the beginning or end of the carousel, set the opacity of the previous or next button to 1 and the cursor to pointer
         prevButtons[carouselIndex].style.opacity = '1';
         nextButtons[carouselIndex].style.opacity = '1';
         nextButtons[carouselIndex].style.cursor = 'pointer';
@@ -48,6 +50,8 @@ function updateCarousel (carouselIndex){
 
 // This initializes the carousel by setting the opacity of the previous button to .5 and the next button to 1
 function initializeCarousel() {
+    // this loop sets the opacity of the previous button to .5 and the next button to 1 and the cursor to pointer
+    // for each carousel
     for (var i = 0; i < prevButtons.length; i++) {
         prevButtons[i].style.opacity = '.5';
         prevButtons[i].style.cursor = 'default';
