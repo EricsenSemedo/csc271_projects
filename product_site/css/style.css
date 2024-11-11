@@ -195,11 +195,6 @@ p {
     border-radius: 5px;
 }
 
-.filter-dropdown:hover .filter-content {
-    display: block;
-}
-
-
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto;

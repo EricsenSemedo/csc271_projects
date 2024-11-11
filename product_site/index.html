@@ -16,7 +16,7 @@
                     <input type="text" id="toSearch" name="query" placeholder="Search">
                     <div class="filter-dropdown">
                         <button type="button" class="filter-btn">Filter</button>
-                        <div class="filter-content">
+                        <div class="filter-content closed">
                             <label><input type="checkbox" name="filter" value="all"> All</label>
                             <label><input type="checkbox" name="filter" value="personal"> Personal</label>
                             <label><input type="checkbox" name="filter" value="topRated"> Top Rated</label>
@@ -46,13 +46,15 @@
                 <button class="carousel-button prev" onclick="cyclePrevious(0)">&lt;</button>
 
                 <div class="game-list">
-                    <a href="./game_view.html" class="card-link">
-                        <div class="game-card">
-                            <img src="./images/game.png" alt="The Witcher 3">
-                            <h3>The Witcher 3</h3>
-                            <p>PC, PS4, Xbox One</p>
-                        </div>
-                    </a>
+                    <template id="game-card-template">
+                        <a href="./game_view.html" class="card-link">
+                            <div class="game-card">
+                                <img src="./images/game.png" alt="The Witcher 3">
+                                <h3>The Witcher 3</h3>
+                                <p>PC, PS4, Xbox One</p>
+                            </div>
+                        </a>
+                    </template>
                 </div>
 
                 <button class="carousel-button next" onclick="cycleNext(0)">&gt;</button>
@@ -63,55 +65,6 @@
                     <button class="carousel-button prev" onclick="cyclePrevious(1)">&lt;</button>
 
                     <div class="game-list">
-                        <a href="./game_view.html" class="card-link">
-                            <div class="game-card">
-                                <img src="./images/game.png" alt="The Witcher 3">
-                                <h3>The Witcher 3</h3>
-                                <p>PC, PS4, Xbox One</p>
-                            </div>
-                        </a>
-                        <a href="./game_view.html" class="card-link">
-                            <div class="game-card">
-                                <img src="./images/game.png" alt="The Witcher 3">
-                                <h3>The Witcher 3</h3>
-                                <p>PC, PS4, Xbox One</p>
-                            </div>
-                        </a>
-                        <a href="./game_view.html" class="card-link">
-                            <div class="game-card">
-                                <img src="./images/game.png" alt="The Witcher 3">
-                                <h3>The Witcher 3</h3>
-                                <p>PC, PS4, Xbox One</p>
-                            </div>
-                        </a>
-                        <a href="./game_view.html" class="card-link">
-                            <div class="game-card">
-                                <img src="./images/game.png" alt="The Witcher 3">
-                                <h3>The Witcher 3</h3>
-                                <p>PC, PS4, Xbox One</p>
-                            </div>
-                        </a>
-                        <a href="./game_view.html" class="card-link">
-                            <div class="game-card">
-                                <img src="./images/game.png" alt="The Witcher 3">
-                                <h3>The Witcher 3</h3>
-                                <p>PC, PS4, Xbox One</p>
-                            </div>
-                        </a>
-                        <a href="./game_view.html" class="card-link">
-                            <div class="game-card">
-                                <img src="./images/game.png" alt="The Witcher 3">
-                                <h3>The Witcher 3</h3>
-                                <p>PC, PS4, Xbox One</p>
-                            </div>
-                        </a>
-                        <a href="./game_view.html" class="card-link">
-                            <div class="game-card">
-                                <img src="./images/game.png" alt="The Witcher 3">
-                                <h3>The Witcher 3</h3>
-                                <p>PC, PS4, Xbox One</p>
-                            </div>
-                        </a>
                     </div>
 
                     <button class="carousel-button next" onclick="cycleNext(1)">&gt;</button>
@@ -122,16 +75,9 @@
                 <button class="carousel-button prev" onclick="cyclePrevious(2)">&lt;</button>
 
                 <div class="game-list">
-                    <a href="./game_view.html" class="card-link">
-                        <div class="game-card">
-                            <img src="./images/game.png" alt="The Witcher 3">
-                            <h3>The Witcher 3</h3>
-                            <p>PC, PS4, Xbox One</p>
-                        </div>
-                    </a>
                 </div>
 
-                <button class="carousel-button next" onclick="cyclePrevious(2)">&gt;</button>
+                <button class="carousel-button next" onclick="cycleNext(2)">&gt;</button>
             </div>
 
             <br>
@@ -178,7 +124,9 @@
             <a href="mailto:ericsen_semedo@uri.edu">Email Me</a>
         </div>
 
+        <script src="./js/game_data.js"></script>
         <script src="./js/simple_script.js"></script>
         <script src="./js/slider.js"></script>
+        <script src="./js/filter.js"></script>
     </body>
 </html>

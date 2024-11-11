@@ -14,8 +14,7 @@
 
             <div class="search-bar">
             <form>
-                <label for="toSearch">Search:</label>
-                <input type="text" id="toSearch" name="query">
+                <input type="text" id="toSearch" name="query" placeholder="Search">
                 <div class="filter-dropdown">
                     <button type="button" class="filter-btn">Filter</button>
                     <div class="filter-content">
@@ -28,10 +27,11 @@
             </form>
             </div>
 
-            <div class="nav-links">
-                <a href="./index.html" class="active">Home</a>
+            <div class="nav-container">
+                <div class="slider"></div> <!-- Sliding block for active page -->
+                <a href="./index.html">Home</a>
                 <a href="./exploration.html" class="active">Exploration</a>
-                <a href="./profile.html" class="active">Profile</a>
+                <a href="./profile.html">Profile</a>
             </div>
         </div>
 
@@ -70,5 +70,8 @@
                 </a>
             </div>
         </div>
+
+        <script src="./js/slider.js"></script>
+        <script src="./js/filter.js"></script>
     </body>
 </html>

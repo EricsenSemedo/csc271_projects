@@ -27,11 +27,10 @@ function handleNavHover() {
    by adding an event listener to the link that listens for a mouseenter event
    and calls the handleNavHover function when the mouse enters the link
 */
-function connectHoverEvent(link) {
+for (var i = 0; i < navLinks.length; i++) {
+    var link = navLinks[i];
     link.addEventListener('mouseenter', handleNavHover);
-}
-
-navLinks.forEach(connectHoverEvent);
+}  
 
 // Initialize the slider position when the page is loaded
 moveSliderToActiveLink();
