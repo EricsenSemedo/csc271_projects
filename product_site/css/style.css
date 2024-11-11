@@ -246,10 +246,6 @@ iframe {
     position: absolute;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 @media only screen and (max-width: 600px) {
     .grid-container {
         grid-template-columns: auto auto;
