@@ -1,5 +1,6 @@
 const navLinks = document.querySelectorAll('.nav-container > a');
 const slider = document.querySelector('.slider');
+const navContainer = document.querySelector('.nav-container');
 
 /* this function moves the slider to the active link when the page is loaded
    by getting the active link and setting the slider's position to the left of the link and the width of the link
@@ -32,6 +33,8 @@ for (var i = 0; i < navLinks.length; i++) {
     link.addEventListener('mouseenter', handleNavHover);
 }  
 
+
 // Initialize the slider position when the page is loaded
 moveSliderToActiveLink();
 window.addEventListener('resize', moveSliderToActiveLink); // move the slider when the window is resized
+navContainer.addEventListener('mouseleave', moveSliderToActiveLink); // move the slider back to the active link when the mouse leaves the nav container
