@@ -1,6 +1,5 @@
 // This class stores the information of each game in the form of a GameCard object
 class GameCard {
-
     constructor(title = "Unknown Title",
         img = "images/game.png",
         description = "No description available", 
@@ -15,10 +14,37 @@ class GameCard {
         this.description = description;
         this.trailerLink = trailerLink;
         this.rating = rating;
+        this.yourRating = null;
         this.genre = genre;
         this.personalScore = personalScore;
         this.releaseDate = releaseDate;
         this.platforms = platforms;
+    }
+
+    // this function adds this game to the user's list of owned games
+    addGameToLibrary() {
+        // add the game to the user's list of owned games
+        localStorage.setItem('OwnedGames', localStorage.getItem('OwnedGames') + this.title);
+    }
+
+    // this function removes this game from the user's list of owned games
+    calculatePersonalScore() {
+        // calculate the user's personal score for this game
+        if (this.yourRating == null) {
+            this.personalScore = this.rating;
+        }
+
+        this.personalScore = (this.rating + this.yourRating) / 2;
+    }
+
+    // this function sets the user's rating for this game
+    setUserRating(rating) {
+        this.yourRating = rating;
+    }
+
+    // This stores the game name in a local storage variable
+    storeGameName() {
+        localStorage.setItem('ClickedGameCard', this.title);
     }
 }
 
