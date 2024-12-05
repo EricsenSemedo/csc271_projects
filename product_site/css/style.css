@@ -1,5 +1,12 @@
+:root {
+    --primary-color: #f56601;
+    --secondary-color: #545454;
+    --secondary-color-transparent: rgb(54, 54,54 , 0.5);
+    --tertiary-color: #242323;
+}
+
 body {
-    background-color: rgb(22, 22, 22);
+    background-color: var(--tertiary-color);
     color: white;
 }
 
@@ -9,7 +16,19 @@ a {
 }
 
 a:hover {
-    color: #f56601;
+    color: var(--primary-color);
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--primary-color);
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .header {
@@ -38,7 +57,7 @@ a:hover {
     margin-top: 20px;
     position: absolute;
     height: 5px;
-    background-color: #f56601;
+    background-color: var(--primary-color);
     transition: left .3s ease, width .3s ease; /* animation properties */
     z-index: 0;
 
@@ -47,7 +66,7 @@ a:hover {
 h1,h2,h3,h4,h5,h6 {
     display: flex;
     justify-content: left;
-    color: #f56601;
+    color: var(--primary-color);
 }
 
 h4 {
@@ -75,7 +94,7 @@ p {
 
 .search-bar input[type="text"] {
     display: inline-block;
-    background-color:rgb(54, 54, 54);
+    background-color: var(--secondary-color);
     color: white;
     border: none;
     border-radius: 5px;
@@ -100,7 +119,7 @@ p {
     cursor: pointer;
     border-radius: 5px;
     height: 100%;
-    background-color: rgb(54, 54, 54);
+    background-color: var(--secondary-color);
     color: white;
     border: none;
     z-index: 1;
@@ -141,7 +160,7 @@ p {
 }
 
 .card-link:hover .game-card{
-    background-color:rgba(54, 54, 54, .5);
+    background-color: var(--secondary-color-transparent);
 }
 
 .game-list {
@@ -164,8 +183,8 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #545454;
-    color: rgb(255, 255, 255);
+    background-color: var(--secondary-color);
+    color: white;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -176,7 +195,7 @@ p {
 .filter-content {
     display: none;
     position: absolute;
-    background-color: #545454;
+    background-color: var(--secondary-color);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -205,7 +224,7 @@ p {
 }
 
 .grid-item {
-    background-color: rgb(54, 54, 54);
+    background-color: var(--secondary-color);
     justify-content: center;
     align-items: center;
 }
@@ -238,6 +257,57 @@ iframe {
     position: absolute;
 }
 
+/* login page things */
+
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 10px;
+    /* padding-top: 40px;
+    padding-bottom: 40px; */
+    padding: 40px;
+    width: 300px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form > input, button , .register-form > input, button {
+    margin-bottom: 20px;
+}
+
+.login-form > a:hover {
+    cursor: pointer;
+}
+
+.register-form {
+    display: none;
+    flex-direction: column;
+}
+
+#register {
+    display: none;
+}
+
+#back {
+    display: none;
+}
+
+.register-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.error-message {
+    color: red;
+}
+
+
+/* Adjustments for smaller screens */
 @media only screen and (max-width: 600px) {
     .grid-container {
         grid-template-columns: auto auto;

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+    </head>
+    <body>
+        <div class="header">
+            <a href="index.html">
+                <img id="logo" src="./images/mogames_logo.png" alt="MoGames Logo">
+            </a>
+        </div>
+
+        <div class="center">
+            <div class="auth-container">
+                <form class="login-form center">
+                    <label>Username:</label>
+                    <input type="text" id="login-username">
+                    <label>Password:</label>
+                    <input type="text" id="login-password">
+                    <button>Login</button>
+                    <a>Create a New Account</a>
+                </form>
+
+                <form class="register-form center">
+                    <label>Username:</label>
+                    <input type="text" id="register-username">
+                    <p class="error-message"></p>
+                    <label>Password:</label>
+                    <input type="text" id="register-password">
+                    <p class="error-message"></p>
+                    <label>Re-type Password:</label>
+                    <input type="text" id="confirm-password">
+                    <p class="error-message"></p>
+                </form>
+
+                <div class="register-buttons">
+                    <button id="back">Back</button>
+                    <button id="register">Register</button>
+                </div>
+            </div>
+        </div>
+        
+
+        <script src="./js/account_management.js"></script>
+    </body>
+</html>
