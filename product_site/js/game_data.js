@@ -1,3 +1,5 @@
+import { userManager } from './user_manager.js';
+
 // This class stores the information of each game in the form of a GameCard object
 class GameCard {
     constructor(title = "Unknown Title",
@@ -49,7 +51,7 @@ class GameCard {
 }
 
 // creates a list of GameCard objects that store the information of each game
-var gameList = [
+let gameList = [
     new GameCard("The Witcher 3: Wild Hunt", "img/witcher3.jpg", "The Witcher 3: Wild Hunt is a story-driven, next-generation open world role-playing game...", "https://www.youtube.com/watch?v=xt_65k-gv1U", "9.3", "RPG", "9.5", "2015-05-19", "PC, PS4, Xbox One, Switch"),
     new GameCard("Red Dead Redemption 2", "img/rdr2.jpg", "Red Dead Redemption 2 is an epic tale of life in America’s unforgiving heartland...", "https://www.youtube.com/watch?v=eaW0tYpxyp0", "9.7", "Action-Adventure", "9.8", "2018-10-26", "PC, PS4, Xbox One"),
     new GameCard("God of War", "img/godofwar.jpg", "Kratos must adapt to unfamiliar lands, unexpected threats...", "https://www.youtube.com/watch?v=K0u_kAWLJOA", "9.6", "Action", "9.7", "2018-04-20", "PS4"),
@@ -105,12 +107,12 @@ function displayGamesOnHome() {
 
     // loop through the first 10 games and displays them for now for suggestions
     for (var i = 0; i < 10; i++) {
+        let chosenIndex = i
         var gameCard = document.createElement('a'); // creates a new anchor element
-        gameCard.ClassName = "card-link"; // sets the class name of the anchor element
         gameCard.href = "./game_view.html"; // sets the href attribute of the anchor element
         // sets the inner HTML of the anchor element to the game card
         gameCard.innerHTML = `
-            <a href="./game_view.html" class="card-link">
+            <a class="card-link">
                 <div class="game-card">
                     <img src="./images/game.png" alt="The Witcher 3">
                     <h3>${gameList[i].title}</h3>
@@ -118,6 +120,8 @@ function displayGamesOnHome() {
                 </div>
             </a>
         `;
+        const link = gameCard.querySelector('a');
+        link.addEventListener('click', function(){gameList[chosenIndex].storeGameName();});
         gameSuggestionsCarousel.appendChild(gameCard);
     }
 
@@ -125,12 +129,12 @@ function displayGamesOnHome() {
 
     // loop through the last 10 games in the list and display them for the popular games for now
     for (var i = gameList.length - 10; i < gameList.length; i++) {
+        let chosenIndex = i
         var gameCard = document.createElement('a'); // creates a new anchor element
-        gameCard.ClassName = "card-link"; // sets the class name of the anchor element
         gameCard.href = "./game_view.html"; // sets the href attribute of the anchor element
         // sets the inner HTML of the anchor element to the game card
         gameCard.innerHTML = `
-            <a href="./game_view.html" class="card-link">
+            <a class="card-link">
                 <div class="game-card">
                     <img src="./images/game.png" alt="The Witcher 3">
                     <h3>${gameList[i].title}</h3>
@@ -138,18 +142,19 @@ function displayGamesOnHome() {
                 </div>
             </a>
         `;
+        const link = gameCard.querySelector('a');
+        link.addEventListener('click', function(){gameList[chosenIndex].storeGameName();});
         popularGamesCarousel.appendChild(gameCard);
     }
 
-
     // display the latest games in the new releases carousel
     for (var i = 0; i < latestGamesIndex.length; i++) {
-        var chosenIndex = latestGamesIndex[i];
+        let chosenIndex = latestGamesIndex[i];
         var gameCard = document.createElement('a'); // creates a new anchor element gameCard.ClassName = "card-link"; // sets the class name of the anchor element
         gameCard.href = "./game_view.html"; // sets the href attribute of the anchor element
         // sets the inner HTML of the anchor element to the game card
         gameCard.innerHTML = `
-            <a href="./game_view.html" class="card-link">
+            <a class="card-link">
                 <div class="game-card">
                     <img src="./images/game.png" alt="The Witcher 3">
                     <h3>${gameList[chosenIndex].title}</h3>
@@ -157,10 +162,52 @@ function displayGamesOnHome() {
                 </div>
             </a>
         `;
+        const link = gameCard.querySelector('a');
+        link.addEventListener('click', function(){gameList[chosenIndex].storeGameName();});
         newReleasesCarousel.appendChild(gameCard);
     }
 }
 
+// This displays the game data on the game view page
+// It also updates the user's recent games list to include the game they clicked on
+function displayGameData() {
+    var title = document.querySelector('#title');
+    var description = document.querySelector('#description');
+    var clickedCard = localStorage.getItem('ClickedGameCard');
+    var gameCard = null;
+       
+    // Finds the game that was clicked on
+    for (var i = 0; i < gameList.length; i++) {
+        if (gameList[i].title == clickedCard) {
+            gameCard = gameList[i];
+
+            break;
+        }
+    }
+
+    // if the game was found, display the game data
+    // also add the game to the user's recent games list
+    if (gameCard) {
+        title.innerHTML = gameCard.title;
+        description.innerHTML = gameCard.description;
+
+        // if the user is logged in, add the game to the recent games list
+        // if not logged in, the game will not be added to the recent games list
+        try {
+            userManager.addRecentGame(gameCard.title);
+        }
+        catch (error) {
+        }
+    }
+}
+
+
 if (currentFile == "index.html") {
     displayGamesOnHome();
 }
+else if (currentFile == "game_view.html"){
+    displayGameData();
+}
+
+export { gameList }; // export makes gameList available for other files to import and use
+

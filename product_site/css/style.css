@@ -288,21 +288,17 @@ iframe {
     flex-direction: column;
 }
 
-#register {
-    display: none;
-}
-
-#back {
-    display: none;
-}
-
 .register-buttons {
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: space-between;
 }
 
 .error-message {
+    color: red;
+}
+
+#login-error-message {
     color: red;
 }
 
